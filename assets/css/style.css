@@ -14,6 +14,7 @@ body {
     background: linear-gradient(180deg, #eef8ff 0%, #f7f3ef 100%);
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
+    line-height: 1.6;
 }
 
 img {
@@ -102,6 +103,10 @@ main {
     padding: 4rem 1rem 2rem;
 }
 
+main > section {
+    margin-bottom: 2.5rem;
+}
+
 .hero {
     max-width: 1100px;
     margin: 0 auto 2rem;
@@ -172,6 +177,9 @@ main {
 }
 
 .cards-section,
+.features-section,
+.testimonials-section,
+.promo-banner,
 .booking-section {
     max-width: 1100px;
     margin: 0 auto 2rem;
@@ -195,6 +203,8 @@ main {
 }
 
 .destination-card,
+.feature-item,
+.testimonial-card,
 .booking-section {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(58, 58, 58, 0.08);
@@ -203,9 +213,49 @@ main {
     padding: 1.5rem;
 }
 
-.destination-card h4 {
+.destination-card h4,
+.feature-item h4,
+.testimonial-card h4 {
     font-size: 1.4rem;
     margin-bottom: 0.65rem;
+}
+
+.features-grid,
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.feature-item {
+    border-top: 4px solid #f8b400;
+}
+
+.testimonial-card {
+    border-left: 4px solid #1d3557;
+}
+
+.quote {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1d3557, #2c6e99);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(29, 53, 87, 0.18);
+}
+
+.promo-banner h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2.3rem);
 }
 
 .booking-form {
@@ -247,8 +297,28 @@ main {
 footer {
     background-color: #1d3557;
     color: #ffffff;
-    padding: 1rem;
-    text-align: center;
+    padding: 1rem 1.5rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -283,7 +353,9 @@ footer {
         margin-top: 75px;
     }
 
-    .card-grid {
+    .card-grid,
+    .features-grid,
+    .testimonials-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
@@ -291,8 +363,19 @@ footer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .promo-banner {
+        padding: 1.75rem 2rem;
+    }
+
     .submit-button {
         grid-column: 1 / -1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hero {
+        min-height: 500px;
+        padding: 3rem 3.5rem;
     }
 }
 /* Large devives (992px and up) */
