@@ -24,23 +24,92 @@
             <h1 id="logo">Travel Agency</h1>
         </a>
         <input type="checkbox" id="nav-toggle" name="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">X</label>
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
         </label>
         <nav>
             <ul id="menu">
-                <li><a href="" class="active">Home</a></li>
-                <li><a href="">Destinations</a></li>
-                <li><a href="">Bookings</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#bookings">Bookings</a></li>
             </ul>
         </nav>
     </header>
     <!-- Main content -->
-    <main>Main content</main>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Your journey starts here</p>
+                <h2>Explore your next adventure</h2>
+                <p>Discover handpicked destinations, flexible bookings, and unforgettable travel experiences designed around your dream getaway.</p>
+                <div class="cta-row">
+                    <a href="#destinations" class="button primary">Plan a trip</a>
+                    <a href="#bookings" class="button secondary">View packages</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations" class="cards-section">
+            <div class="section-heading">
+                <p class="eyebrow">Popular escapes</p>
+                <h3>Top destinations</h3>
+            </div>
+            <div class="card-grid">
+                <article class="destination-card">
+                    <h4>Bali</h4>
+                    <p>Sunny beaches, tropical culture, and relaxing retreats.</p>
+                </article>
+                <article class="destination-card">
+                    <h4>Paris</h4>
+                    <p>Classic charm, museums, rooftop dining, and romantic walks.</p>
+                </article>
+                <article class="destination-card">
+                    <h4>Tokyo</h4>
+                    <p>Neon nights, unique cuisine, and vibrant city energy.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="bookings" class="booking-section">
+            <div class="section-heading">
+                <p class="eyebrow">Stress-free travel</p>
+                <h3>Easy bookings</h3>
+            </div>
+
+            <form class="booking-form">
+                <div class="form-field">
+                    <label for="destination">Destination</label>
+                    <select id="destination" name="destination">
+                        <option>Bali</option>
+                        <option>Paris</option>
+                        <option>Tokyo</option>
+                        <option>Dubai</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="travel-date">Travel date</label>
+                    <input type="date" id="travel-date" name="travel-date">
+                </div>
+
+                <div class="form-field">
+                    <label for="travelers">Travelers</label>
+                    <input type="number" id="travelers" name="travelers" min="1" max="12" value="2">
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <button type="submit" class="button primary submit-button">Book now</button>
+            </form>
+        </section>
+    </main>
     <!-- Footer -->
-    <footer>Footer</footer>
+    <footer>Travel Agency © 2026</footer>
 
 
     
