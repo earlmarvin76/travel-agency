@@ -4,34 +4,34 @@ A modern, responsive landing page for a premium travel agency offering curated t
 
 ##  Overview
 
-Earl Marvin's Travel Agency is a professional static website designed to showcase travel packages, destinations, and booking capabilities. Built with semantic HTML and modern CSS, it delivers a polished user experience across all devices.
+Earl Marvin's Travel Agency is a professional static website 🌐 designed to showcase travel packages 🏖️, destinations ✈️, and booking capabilities. Built with semantic HTML 📝 and modern CSS 🎨, it delivers a polished user experience across all devices 📱💻.
 
 ## 📁 Project Structure
 
-- **Hero Section**: Engaging introduction with call-to-action buttons
-- **Top Destinations**: Featured travel locations (Bali, Paris, Tokyo)
-- **Service Highlights**: Tailored itineraries, 24/7 support, best value pricing
-- **Customer Testimonials**: Real traveler experiences and feedback
-- **Promotional Banner**: Limited-time offers and discounts
-- **Easy Booking Form**: Destination selection, travel dates, group size, and email capture
-- **Contact Section**: Email, phone, and location information
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop
-- **Professional Footer**: Copyright notice and social media links
+- 🎯 **Hero Section**: Engaging introduction with call-to-action buttons
+- 🗺️ **Top Destinations**: Featured travel locations (Bali, Paris, Tokyo)
+- ⭐ **Service Highlights**: Tailored itineraries, 24/7 support, best value pricing
+- 💬 **Customer Testimonials**: Real traveler experiences and feedback
+- 🎉 **Promotional Banner**: Limited-time offers and discounts
+- 📝 **Easy Booking Form**: Destination selection, travel dates, group size, and email capture
+- 📧 **Contact Section**: Email, phone, and location information
+- 📱 **Responsive Design**: Fully optimized for mobile, tablet, and desktop
+- 🔗 **Professional Footer**: Copyright notice and social media links
 
 ##  Project Structure
 
 ```
 travel-agency/
-├── index.html                 # Main HTML file
-├── README.md                  # Project documentation
-├── assets/
-│   └── css/
-│       ├── style.css          # Main stylesheet
-│       └── favicon_io/        # Favicon files
-│           ├── favicon.ico
-│           ├── apple-touch-icon.png
-│           ├── favicon-32x32.png
-│           └── favicon-16x16.png
+├── 📄 index.html              # Main HTML file
+├── 📖 README.md               # Project documentation
+└── 📦 assets/
+    └── 🎨 css/
+        ├── 🖌️  style.css      # Main stylesheet
+        └── 🎭 favicon_io/     # Favicon files
+            ├── favicon.ico
+            ├── apple-touch-icon.png
+            ├── favicon-32x32.png
+            └── favicon-16x16.png
 ```
 
 ## 🛠️ Technologies Used
