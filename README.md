@@ -2,11 +2,11 @@
 
 A modern, responsive landing page for a premium travel agency offering curated travel experiences and seamless booking solutions.
 
-## 🌍 Overview
+##  Overview
 
 Earl Marvin's Travel Agency is a professional static website designed to showcase travel packages, destinations, and booking capabilities. Built with semantic HTML and modern CSS, it delivers a polished user experience across all devices.
 
-## ✨ Features
+##  Features
 
 - **Hero Section**: Engaging introduction with call-to-action buttons
 - **Top Destinations**: Featured travel locations (Bali, Paris, Tokyo)
@@ -18,7 +18,7 @@ Earl Marvin's Travel Agency is a professional static website designed to showcas
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop
 - **Professional Footer**: Copyright notice and social media links
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 travel-agency/
@@ -105,7 +105,7 @@ Visit the live site on GitHub Pages or your deployed hosting platform.
 - Three customer reviews highlighting service quality
 - Features: attention to detail, responsive support, discovery
 
-## 🔧 Customization
+##  Customization
 
 To personalize this template:
 
