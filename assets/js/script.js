@@ -29,6 +29,14 @@ if (menuButton) {
             menuButton.setAttribute('aria-expanded', 'false');
         });
     });
+
+    const homeLink = document.querySelector('#site-menu a[href="#top"]');
+    homeLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.history.replaceState(null, '', '#top');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateActiveLink();
+    });
 }
 
 if (travelDate) {

@@ -27,6 +27,12 @@ test('mobile navigation uses an accessible button', () => {
     assert.doesNotMatch(css, /#nav-toggle/);
 });
 
+test('Home link explicitly scrolls to the top', () => {
+    assert.match(html, /href="#top"/);
+    assert.match(script, /window\.scrollTo\(\{ top: 0, behavior: 'smooth' \}\)/);
+    assert.match(script, /event\.preventDefault\(\)/);
+});
+
 test('booking form requires valid booking details', () => {
     assert.match(html, /id="booking-form"/);
     assert.match(html, /id="destination"[^>]*required/);
