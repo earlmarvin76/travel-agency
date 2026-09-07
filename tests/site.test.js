@@ -20,6 +20,7 @@ test('navigation exposes four unique section links', () => {
 
 test('travel videos play inside the homepage', () => {
     assert.match(html, /id="videos"/);
+    assert.match(html, /Travel &#45; Videos/);
     assert.equal((html.match(/<iframe class="video-frame"/g) || []).length, 3);
     assert.equal((html.match(/youtube\.com\/embed\/[A-Za-z0-9_-]{11}/g) || []).length, 3);
     assert.match(css, /\.video-frame/);
@@ -59,4 +60,6 @@ test('page includes keyboard focus and header-safe scrolling styles', () => {
     assert.match(css, /:focus-visible/);
     assert.match(css, /scroll-behavior: smooth/);
     assert.match(css, /scroll-margin-top: 90px/);
+    assert.match(css, /background-attachment: fixed/);
+    assert.match(css, /linear-gradient\(rgba\(20, 67, 99, 0\.58\)/);
 });
