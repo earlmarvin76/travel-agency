@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Document metadata and external resources. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- meta tags for search engines -->
+    <!-- Search-engine description and keyword metadata. -->
     <meta name="description" content="Travel Agency. Explore the world with our travel packages and services. Book flights, hotels, and tours for your next adventure.">
     <meta name="keywords" content="Travel, Agency, Tours, Flights, Hotels, Adventure">
-    <!-- Title -->
-    <title>Earl Marvin`s Travel Agency</title>
-    <!-- Favicon -->
+    <!-- Updated title uses the correct apostrophe in the agency name. -->
+    <title>Earl Marvin's Travel Agency</title>
+    <!-- Browser and device icons. -->
     <link rel="icon" href="assets/css/favicon_io/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/css/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/css/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/css/favicon_io/favicon-16x16.png">
-    <!-- Stylesheet -->
+    <!-- Main visual stylesheet. -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-     <!-- Header -->
-    <header>
+    <!-- Header uses an ID so the Home link can return to the top of the page. -->
+    <header id="top">
         <a href="index.html">
-            <h1 id="logo">Earl Marvin`s Travel Agency</h1>
+            <h1 id="logo">Earl Marvin's Travel Agency</h1>
         </a>
-        <input type="checkbox" id="nav-toggle" name="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <!-- Accessible button replaces the hidden checkbox navigation toggle. -->
+        <button type="button" class="nav-toggle" aria-controls="site-menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-        </label>
-        <nav>
+        </button>
+        <!-- Named navigation gives the toggle a reliable accessibility target. -->
+        <nav id="site-menu" aria-label="Primary navigation">
             <ul id="menu">
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#top">Home</a></li>
                 <li><a href="#destinations">Destinations</a></li>
                 <li><a href="#bookings">Bookings</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <!-- Main content -->
+    <!-- Main page content. -->
     <main>
+        <!-- Hero introduction and primary calls to action. -->
         <section class="hero">
             <div class="hero-content">
                 <p class="eyebrow">Your journey starts here</p>
@@ -52,6 +55,7 @@
             </div>
         </section>
 
+        <!-- Featured destinations presented as a responsive card grid. -->
         <section id="destinations" class="cards-section">
             <div class="section-heading">
                 <p class="eyebrow">Popular escapes</p>
@@ -73,6 +77,7 @@
             </div>
         </section>
 
+        <!-- Service benefits that explain why customers should choose the agency. -->
         <section class="features-section">
             <div class="section-heading">
                 <p class="eyebrow">Why choose us</p>
@@ -94,6 +99,7 @@
             </div>
         </section>
 
+        <!-- Customer testimonials that provide social proof. -->
         <section class="testimonials-section">
             <div class="section-heading">
                 <p class="eyebrow">Travel stories</p>
@@ -115,6 +121,7 @@
             </div>
         </section>
 
+        <!-- Promotional offer leading visitors to the booking form. -->
         <section class="promo-banner">
             <div>
                 <p class="eyebrow">Limited offer</p>
@@ -123,6 +130,7 @@
             <a href="#bookings" class="button primary">Claim offer</a>
         </section>
 
+        <!-- Secondary booking call to action. -->
         <section class="cta-strip">
             <div>
                 <p class="eyebrow">Ready to travel?</p>
@@ -131,16 +139,19 @@
             <a href="#bookings" class="button primary">Start planning</a>
         </section>
 
+        <!-- Booking form for collecting trip details. -->
         <section id="bookings" class="booking-section">
             <div class="section-heading">
                 <p class="eyebrow">Stress-free travel</p>
                 <h3>Easy bookings</h3>
             </div>
 
-            <form class="booking-form">
+            <!-- Booking fields are validated in the browser and sent through email on a static site. -->
+            <form class="booking-form" id="booking-form" action="mailto:earlmarvin76@gmail.com" method="post" enctype="text/plain">
+                <!-- Destination selection. -->
                 <div class="form-field">
                     <label for="destination">Destination</label>
-                    <select id="destination" name="destination">
+                    <select id="destination" name="destination" required>
                         <option>Bali</option>
                         <option>Paris</option>
                         <option>Tokyo</option>
@@ -148,51 +159,57 @@
                     </select>
                 </div>
 
+                <!-- Requested travel date. -->
                 <div class="form-field">
                     <label for="travel-date">Travel date</label>
-                    <input type="date" id="travel-date" name="travel-date">
+                    <input type="date" id="travel-date" name="travel-date" required>
                 </div>
 
+                <!-- Number of travelers. -->
                 <div class="form-field">
                     <label for="travelers">Travelers</label>
                     <input type="number" id="travelers" name="travelers" min="1" max="12" value="2">
                 </div>
 
+                <!-- Visitor email used for booking communication. -->
                 <div class="form-field">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
                 </div>
 
                 <button type="submit" class="button primary submit-button">Book now</button>
+                <!-- Status text reports the result of the booking action to all users. -->
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
         </section>
 
+        <!-- Direct contact details for visitors who need assistance. -->
         <section id="contact" class="contact-section">
             <div class="section-heading">
                 <p class="eyebrow">Get in touch</p>
                 <h3>Contact our team</h3>
             </div>
+            <!-- Updated agency contact details. -->
             <div class="contact-details">
-                <p>Email: <a href="mailto:hello@earlmarvintravel.com">hello@earlmarvintravel.com</a></p>
-                <p>Phone: <a href="tel:07741499404">+(44) 7741499404</a></p>
-                <p>Location: EastYorkshire Hull</p>
+                <p>Email: <a href="mailto:earlmarvin76@gmail.com">earlmarvin76@gmail.com</a></p>
+                <p>Phone: <a href="tel:+447741499404">+44 7741 499404</a></p>
+                <p>Location: Woburn Avenue, Hull, EastYorkshire</p>
             </div>
         </section>
     </main>
-    <!-- Footer -->
+    <!-- Footer with copyright information and a direct contact link. -->
     <footer>
         <div class="footer-content">
             <p>© 2026 Earl Marvin's Travel Agency. All rights reserved.</p>
+            <!-- Footer contact link uses the same current agency email address. -->
             <div class="footer-links">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-                <a href="mailto:hello@earlmarvintravel.com">Contact</a>
+                <a href="mailto:earlmarvin76@gmail.com">Contact</a>
             </div>
         </div>
     </footer>
 
-
-    
+    <!-- JavaScript controls the mobile menu, active links, and email booking request. -->
+    <script src="assets/js/script.js"></script>
 </body>
 <html>    
 </html>

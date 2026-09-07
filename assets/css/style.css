@@ -1,12 +1,12 @@
-/* Google fonts import */
+/* Load the display and body font families used throughout the page. */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
-/* Asterisk wild card selector to override default styles added by the browser */
+/* Reset browser defaults so spacing and sizing remain predictable. */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-/* General styles */
+/* Global page layout, colors, typography, and background. */
 body {
     min-height: 100vh;
     display: flex;
@@ -15,14 +15,17 @@ body {
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
+    /* Smoothly moves users to sections selected from the navigation. */
+    scroll-behavior: smooth;
 }
 
 img {
+    /* Keep images responsive inside their containers. */
     max-width: 100%;
     display: block;
 }
 
-/* Header */
+/* Fixed header and brand styling. */
 header {
     background-color: rgba(255, 255, 255, 0.96);
     padding: 0 1rem;
@@ -35,21 +38,25 @@ header {
     align-items: center;
 }
 header a {
+    /* Remove default link decoration from the brand link. */
     text-decoration: none;
     color: inherit;
 }
 h1 {
+    /* Use the display font to distinguish the agency name. */
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
 }
 #menu {
+    /* Base navigation list styling. */
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
 }
 #menu a {
+    /* Make each navigation link easy to click or tap. */
     display: block;
     padding: 0.5rem 0;
     transition: border-color 0.2s ease;
@@ -58,10 +65,12 @@ h1 {
     margin-bottom: 1em;
 }
 .active {
+    /* Mark the section represented by the current URL hash. */
     border-bottom: 1px solid #3a3a3a;
 }
-/* navbar styles with dropdown toggle */
+/* Mobile navigation: the menu is opened by the accessible button in the header. */
 nav {
+    /* Mobile menu panel is positioned below the fixed header. */
     position: absolute;
     background-color: #ffffff;
     width: 100%;
@@ -72,31 +81,48 @@ nav {
     top: 100%;
 }
 
-/* Nav toggle */
-#nav-toggle:checked~nav {
-    display: block;
-}
-#nav-toggle {
-    display: none;
-}
-.nav-toggle-label {
+.nav-toggle {
+    /* Draws the compact hamburger control without an image asset. */
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4px;
     width: 30px;
     height: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     cursor: pointer;
 }
 
-.nav-toggle-label span {
+.nav-toggle span {
+    /* Each empty span becomes one horizontal line of the hamburger icon. */
     display: block;
     width: 100%;
     height: 3px;
     background: #3a3a3a;
     border-radius: 2px;
 }
-/* Main Content */
+
+header.nav-open nav {
+    /* JavaScript adds this class when the mobile menu is open. */
+    display: block;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    /* Keeps keyboard focus visible against the light page background. */
+    outline: 3px solid #1d3557;
+    outline-offset: 3px;
+}
+
+main > section {
+    /* Prevents the fixed header from covering anchored section headings. */
+    scroll-margin-top: 90px;
+}
+/* Main content spacing and page flow. */
 main {
     flex: 1 0 auto;
     margin-top: 47px;
@@ -108,6 +134,7 @@ main > section {
 }
 
 .hero {
+    /* Image-backed introduction that anchors the visual design. */
     max-width: 1100px;
     margin: 0 auto 2rem;
     min-height: 420px;
@@ -122,10 +149,12 @@ main > section {
 }
 
 .hero-content {
+    /* Limit text width for comfortable reading over the hero image. */
     max-width: 550px;
 }
 
 .eyebrow {
+    /* Small uppercase label used above major headings. */
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-size: 0.75rem;
@@ -134,6 +163,7 @@ main > section {
 }
 
 .hero h2 {
+    /* Responsive hero heading. */
     font-family: 'Oswald', sans-serif;
     font-size: clamp(2.2rem, 5vw, 4rem);
     line-height: 1.05;
@@ -141,18 +171,21 @@ main > section {
 }
 
 .hero p {
+    /* Supporting hero copy. */
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
 .cta-row {
+    /* Keep hero actions aligned while allowing them to wrap on small screens. */
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
 }
 
 .button {
+    /* Shared button and link appearance. */
     display: inline-block;
     padding: 0.85rem 1.4rem;
     border-radius: 999px;
@@ -162,15 +195,18 @@ main > section {
 }
 
 .button:hover {
+    /* Provide a small visual response to pointer interaction. */
     transform: translateY(-1px);
 }
 
 .button.primary {
+    /* High-contrast action button. */
     background: #f8b400;
     color: #1a1a1a;
 }
 
 .button.secondary {
+    /* Secondary action used on the dark hero background. */
     background: rgba(255, 255, 255, 0.18);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -188,6 +224,8 @@ main > section {
     padding: 1.5rem;
 }
 
+/* Shared heading spacing and typography for content sections. */
+
 .section-heading {
     margin-bottom: 1.25rem;
 }
@@ -199,6 +237,7 @@ main > section {
 }
 
 .card-grid {
+    /* Stack destination cards by default; desktop rules create columns later. */
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -216,12 +255,16 @@ main > section {
     padding: 1.5rem;
 }
 
+/* Shared surface treatment for cards and form/contact panels. */
+
 .destination-card h4,
 .feature-item h4,
 .testimonial-card h4 {
     font-size: 1.4rem;
     margin-bottom: 0.65rem;
 }
+
+/* Responsive grids for benefits and testimonials. */
 
 .features-grid,
 .testimonials-grid {
@@ -231,14 +274,17 @@ main > section {
 }
 
 .feature-item {
+    /* Gold accent identifies service benefits. */
     border-top: 4px solid #f8b400;
 }
 
 .testimonial-card {
+    /* Blue accent identifies customer quotes. */
     border-left: 4px solid #1d3557;
 }
 
 .quote {
+    /* Make testimonial text prominent and readable. */
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 1rem;
@@ -247,6 +293,7 @@ main > section {
 
 .promo-banner,
 .cta-strip {
+    /* Shared layout for promotional and call-to-action strips. */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -259,28 +306,33 @@ main > section {
 
 .promo-banner h3,
 .cta-strip h3 {
+    /* Display typography for promotional headings. */
     font-family: 'Oswald', sans-serif;
     font-size: clamp(1.4rem, 3vw, 2.3rem);
 }
 
 .cta-strip {
+    /* Gold variant for the final planning prompt. */
     background: linear-gradient(135deg, #f8b400, #ffda66);
     color: #1a1a1a;
 }
 
 .contact-details {
+    /* Stack contact methods with consistent spacing. */
     display: grid;
     gap: 0.5rem;
     font-size: 1.05rem;
 }
 
 .contact-details a {
+    /* Emphasize clickable contact details. */
     color: #1d3557;
     text-decoration: none;
     font-weight: 700;
 }
 
 .booking-form {
+    /* Mobile-first single-column booking layout. */
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -288,18 +340,21 @@ main > section {
 }
 
 .form-field {
+    /* Stack each label and control as one accessible field group. */
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
 }
 
 .form-field label {
+    /* Make form labels visually clear. */
     font-weight: 700;
     color: #1f2937;
 }
 
 .form-field input,
 .form-field select {
+    /* Consistent control sizing and typography. */
     padding: 0.8rem 0.9rem;
     border: 1px solid #dbe3ea;
     border-radius: 10px;
@@ -308,14 +363,23 @@ main > section {
     color: #1f2937;
 }
 
+.form-status {
+    /* Reserves space for validation and booking feedback without shifting the form. */
+    grid-column: 1 / -1;
+    min-height: 1.6em;
+    color: #1d3557;
+    font-weight: 700;
+}
+
 .submit-button {
+    /* Keep the submit control compact and interactive. */
     border: none;
     cursor: pointer;
     width: fit-content;
     margin-top: 0.5rem;
 }
 
-/* Footer */
+/* Footer layout and link styling. */
 footer {
     background-color: #1d3557;
     color: #ffffff;
@@ -356,9 +420,9 @@ footer {
     opacity: 1;
 }
 
-/* Media query: tablets and larger (768px and up) */
+/* Tablet and desktop layout changes at 768px and above. */
 @media screen and (min-width: 768px) {
-    /* Header */
+    /* Replace the mobile menu with an always-visible desktop navigation. */
     nav {
         display: block;
         position: relative;
@@ -375,7 +439,7 @@ footer {
         padding-left: 1rem;
         margin-bottom: 0;
     }
-    .nav-toggle-label {
+    .nav-toggle {
         display: none;
     }
     #logo {
@@ -383,7 +447,7 @@ footer {
         line-height: 75px;
         margin: 0 0.5rem;
     }
-    /* Main Content */
+    /* Increase desktop spacing and switch cards/forms to multi-column layouts. */
     main {
         margin-top: 75px;
     }
@@ -409,12 +473,13 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+    /* Give the hero more height and interior space on large screens. */
     .hero {
         min-height: 500px;
         padding: 3rem 3.5rem;
     }
 }
-/* Large devives (992px and up) */
+/* Add pointer hover styling on larger devices with more available space. */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
