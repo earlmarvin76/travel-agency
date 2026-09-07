@@ -59,6 +59,7 @@ h1 {
     /* Make each navigation link easy to click or tap. */
     display: block;
     padding: 0.5rem 0;
+    white-space: nowrap;
     transition: border-color 0.2s ease;
 }
 #menu > li {
@@ -279,7 +280,7 @@ main > section {
 }
 
 .video-frame {
-    /* Preserve the video aspect ratio across mobile and desktop layouts. */
+    /* Keep embedded videos responsive across mobile and desktop screens. */
     width: 100%;
     aspect-ratio: 16 / 9;
     border: 0;

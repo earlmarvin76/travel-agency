@@ -18,10 +18,10 @@ test('navigation exposes four unique section links', () => {
     );
 });
 
-test('travel videos stay embedded on the homepage', () => {
+test('travel videos play inside the homepage', () => {
     assert.match(html, /id="videos"/);
     assert.equal((html.match(/<iframe class="video-frame"/g) || []).length, 3);
-    assert.equal((html.match(/youtube\.com\/embed\?listType=search/g) || []).length, 3);
+    assert.equal((html.match(/youtube\.com\/embed\/[A-Za-z0-9_-]{11}/g) || []).length, 3);
     assert.match(css, /\.video-frame/);
 });
 
