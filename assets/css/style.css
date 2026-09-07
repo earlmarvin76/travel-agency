@@ -278,6 +278,14 @@ main > section {
     flex: 1;
 }
 
+.video-frame {
+    /* Preserve the video aspect ratio across mobile and desktop layouts. */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 10px;
+}
+
 /* Responsive grids for benefits and testimonials. */
 
 .features-grid,

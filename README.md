@@ -12,7 +12,7 @@ Earl Marvin's Travel Agency is a professional static website 🌐 designed to sh
 
 - 🎯 **Hero Section**: Engaging introduction with call-to-action buttons
 - 🗺️ **Top Destinations**: Featured travel locations (Bali, Paris, Tokyo)
-- 🎥 **Travel Videos**: Destination-specific YouTube links for trip inspiration
+- 🎥 **Travel Videos**: Destination-specific embedded YouTube players for trip inspiration
 - ⭐ **Service Highlights**: Tailored itineraries, 24/7 support, best value pricing
 - 💬 **Customer Testimonials**: Real traveler experiences and feedback
 - 🎉 **Promotional Banner**: Limited-time offers and discounts
@@ -116,7 +116,7 @@ npm test
 - Home, Destinations, Travel Videos, Bookings, and Contact links with smooth anchor navigation
 
 ### Travel Videos
-- YouTube travel-guide links for Bali, Paris, and Tokyo
+- Embedded YouTube travel guides for Bali, Paris, and Tokyo
 
 ### Booking Form
 <!-- Explains that the static form opens a prefilled email request instead of using a backend. -->
