@@ -11,11 +11,17 @@ const script = fs.readFileSync(path.join(root, 'assets/js/script.js'), 'utf8');
 const navigationLinks = [...html.matchAll(/<li><a href="([^"]+)">([^<]+)<\/a><\/li>/g)];
 
 test('navigation exposes four unique section links', () => {
-    assert.equal(navigationLinks.length, 4);
+    assert.equal(navigationLinks.length, 5);
     assert.deepEqual(
         navigationLinks.map(([, href]) => href),
-        ['#top', '#destinations', '#bookings', '#contact']
+        ['#top', '#destinations', '#videos', '#bookings', '#contact']
     );
+});
+
+test('travel videos provide safe external links', () => {
+    assert.match(html, /id="videos"/);
+    assert.equal((html.match(/youtube\.com\/results\?search_query=/g) || []).length, 3);
+    assert.equal((html.match(/rel="noopener noreferrer"/g) || []).length, 3);
 });
 
 test('mobile navigation uses an accessible button', () => {

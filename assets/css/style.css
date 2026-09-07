@@ -213,6 +213,7 @@ main > section {
 }
 
 .cards-section,
+.video-section,
 .features-section,
 .testimonials-section,
 .promo-banner,
@@ -244,6 +245,7 @@ main > section {
 }
 
 .destination-card,
+.video-card,
 .feature-item,
 .testimonial-card,
 .booking-section,
@@ -258,10 +260,22 @@ main > section {
 /* Shared surface treatment for cards and form/contact panels. */
 
 .destination-card h4,
+.video-card h4,
 .feature-item h4,
 .testimonial-card h4 {
     font-size: 1.4rem;
     margin-bottom: 0.65rem;
+}
+
+.video-card {
+    /* Keep video links aligned and make each destination card easy to scan. */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.video-card p {
+    flex: 1;
 }
 
 /* Responsive grids for benefits and testimonials. */
