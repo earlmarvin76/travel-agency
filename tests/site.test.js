@@ -63,3 +63,11 @@ test('page includes keyboard focus and header-safe scrolling styles', () => {
     assert.match(css, /background-attachment: fixed/);
     assert.match(css, /linear-gradient\(rgba\(20, 67, 99, 0\.58\)/);
 });
+
+test('footer includes a responsive location map', () => {
+    assert.match(html, /class="footer-map"/);
+    assert.match(html, /openstreetmap\.org\/export\/embed\.html/);
+    assert.match(html, /title="Map showing Woburn Avenue, Hull, East Yorkshire"/);
+    assert.match(css, /\.footer-map iframe/);
+    assert.match(css, /@media screen and \(max-width: 767px\)/);
+});

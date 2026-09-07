@@ -420,11 +420,15 @@ footer {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    text-align: center;
+}
+
+.footer-details {
+    flex: 1 1 18rem;
+    text-align: left;
 }
 
 .footer-content p {
@@ -448,6 +452,19 @@ footer {
 
 .footer-links a:hover {
     opacity: 1;
+}
+
+.footer-map {
+    flex: 1 1 22rem;
+    min-width: 0;
+}
+
+.footer-map iframe {
+    display: block;
+    width: 100%;
+    min-height: 13rem;
+    border: 0;
+    border-radius: 10px;
 }
 
 /* Tablet and desktop layout changes at 768px and above. */
@@ -499,6 +516,88 @@ footer {
 
     .submit-button {
         grid-column: 1 / -1;
+    }
+}
+
+/* Mobile-first adjustments keep the page readable on narrow screens. */
+@media screen and (max-width: 767px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    header {
+        min-height: 3.5rem;
+    }
+
+    #logo {
+        max-width: calc(100vw - 5rem);
+        font-size: clamp(1.1rem, 6vw, 1.7rem);
+        line-height: 1.15;
+    }
+
+    main {
+        margin-top: 3.5rem;
+        padding: 2rem 0.75rem 1rem;
+    }
+
+    .hero {
+        min-height: 22rem;
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .hero h2 {
+        font-size: clamp(2rem, 11vw, 3.2rem);
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cards-section,
+    .features-section,
+    .testimonials-section,
+    .promo-banner,
+    .cta-strip,
+    .booking-section,
+    .contact-section {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .destination-card,
+    .video-card,
+    .feature-item,
+    .testimonial-card,
+    .booking-section,
+    .contact-section {
+        padding: 1.15rem;
+        border-radius: 14px;
+    }
+
+    .promo-banner,
+    .cta-strip {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .promo-banner .button,
+    .cta-strip .button,
+    .submit-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content {
+        align-items: stretch;
+    }
+
+    .footer-details {
+        text-align: center;
+    }
+
+    .footer-map iframe {
+        min-height: 11rem;
     }
 }
 
