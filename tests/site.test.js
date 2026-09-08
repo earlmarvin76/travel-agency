@@ -61,7 +61,7 @@ test('page includes keyboard focus and header-safe scrolling styles', () => {
     assert.match(css, /scroll-behavior: smooth/);
     assert.match(css, /scroll-margin-top: 90px/);
     assert.match(css, /background-attachment: fixed/);
-    assert.match(css, /linear-gradient\(rgba\(20, 67, 99, 0\.58\)/);
+    assert.match(css, /linear-gradient\(rgba\(20, 67, 99, 0\.28\)/);
 });
 
 test('footer includes a responsive location map', () => {
