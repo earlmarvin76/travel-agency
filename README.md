@@ -105,8 +105,8 @@ npm test
 
 <!-- Contact information was updated to the current agency email and address. -->
 - **Email**: earlmarvin76@gmail.com
-- **Phone**: +1 (234) 567-890
-- **Location**: Woburn Avenue, Hull, EastYorkshire
+- **Phone**: +447741499404
+- **Location**: Woburn Street, Hull, EastYorkshire
 
 <!-- Short reference for the page sections and their responsibilities. -->
 ## 📝 Sections Overview
