@@ -80,8 +80,8 @@ test('page includes keyboard focus and header-safe scrolling styles', () => {
 
 test('footer includes a responsive location map', () => {
     assert.match(html, /class="footer-map"/);
-    assert.match(html, /openstreetmap\.org\/export\/embed\.html/);
-    assert.match(bookingsHtml, /title="Map showing Woburn Street, Hull, East Yorkshire"/);
-    assert.match(css, /\.footer-map iframe/);
+    assert.match(html, /staticmap\.openstreetmap\.de\/staticmap\.php/);
+    assert.match(bookingsHtml, /alt="Map showing Woburn Street, Hull, East Yorkshire"/);
+    assert.match(css, /\.footer-map img/);
     assert.match(css, /@media screen and \(max-width: 767px\)/);
 });

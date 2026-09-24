@@ -463,12 +463,25 @@ footer {
     min-width: 0;
 }
 
-.footer-map iframe {
+.footer-map a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-map img {
     display: block;
     width: 100%;
     min-height: 13rem;
     border: 0;
     border-radius: 10px;
+}
+
+.footer-map span {
+    display: block;
+    padding-top: 0.35rem;
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 /* Tablet and desktop layout changes at 768px and above. */
@@ -605,7 +618,7 @@ footer {
         text-align: center;
     }
 
-    .footer-map iframe {
+    .footer-map img {
         min-height: 11rem;
     }
 }

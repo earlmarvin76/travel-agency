@@ -1,5 +1,0 @@
-{
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python.analysis.enabled": false,
-    "flake8.enabled": false
-}
