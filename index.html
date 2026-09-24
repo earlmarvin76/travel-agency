@@ -9,7 +9,7 @@
     <meta name="description" content="Travel Agency. Explore the world with our travel packages and services. Book flights, hotels, and tours for your next adventure.">
     <meta name="keywords" content="Travel, Agency, Tours, Flights, Hotels, Adventure">
     <!-- Updated title uses the correct apostrophe in the agency name. -->
-    <title>Earl Marvin's Travel Agency</title>
+    <title>Earl Marvin`s Travel Agency</title>
     <!-- Browser and device icons. -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/css/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/css/favicon_io/favicon-32x32.png">
@@ -22,7 +22,7 @@
     <!-- Header uses an ID so the Home link can return to the top of the page. -->
     <header id="top">
         <a href="index.html">
-            <h1 id="logo">Travel Agency</h1>
+            <h1 id="logo">Earl Marvin`s Travel Agency</h1>
         </a>
         <!-- Accessible button replaces the hidden checkbox navigation toggle. -->
         <button type="button" class="nav-toggle" aria-controls="site-menu" aria-expanded="false">
@@ -33,11 +33,11 @@
         <!-- Named navigation gives the toggle a reliable accessibility target. -->
         <nav id="site-menu" aria-label="Primary navigation">
             <ul id="menu">
-                <li><a href="#top">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#videos">Travel-Videos</a></li>
-                <li><a href="#bookings">Bookings</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="videos.html">Travel-Videos</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,57 +50,9 @@
                 <h2>Explore your next adventure</h2>
                 <p>Discover handpicked destinations, flexible bookings, and unforgettable travel experiences designed around your dream getaway.</p>
                 <div class="cta-row">
-                    <a href="#destinations" class="button primary">Plan a trip</a>
-                    <a href="#bookings" class="button secondary">View packages</a>
+                    <a href="destinations.html" class="button primary">Plan a trip</a>
+                    <a href="bookings.html" class="button secondary">View packages</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Featured destinations presented as a responsive card grid. -->
-        <section id="destinations" class="cards-section">
-            <div class="section-heading">
-                <p class="eyebrow">Popular escapes</p>
-                <h3>Top destinations</h3>
-            </div>
-            <div class="card-grid">
-                <article class="destination-card">
-                    <h4>Bali</h4>
-                    <p>Sunny beaches, tropical culture, and relaxing retreats.</p>
-                </article>
-                <article class="destination-card">
-                    <h4>Paris</h4>
-                    <p>Classic charm, museums, rooftop dining, and romantic walks.</p>
-                </article>
-                <article class="destination-card">
-                    <h4>Tokyo</h4>
-                    <p>Neon nights, unique cuisine, and vibrant city energy.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Direct YouTube videos play inside the homepage. -->
-        <section id="videos" class="cards-section video-section">
-            <div class="section-heading">
-                <p class="eyebrow">Watch and wander</p>
-                <!-- Use an explicit hyphen entity so the separator renders consistently. -->
-                <h3>Travel &#45; Videos</h3>
-            </div>
-            <div class="card-grid">
-                <article class="video-card">
-                    <h4>Bali travel videos</h4>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/k_SajaEVu4E" title="Bali travel video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <p>Explore beaches, temples, food, and island culture.</p>
-                </article>
-                <article class="video-card">
-                    <h4>Paris travel videos</h4>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/_gIljISgm_k" title="Paris travel video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <p>Find inspiration for museums, cafés, landmarks, and walks.</p>
-                </article>
-                <article class="video-card">
-                    <h4>Tokyo travel videos</h4>
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/I_qaccjrirc" title="Tokyo travel video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <p>See neighbourhoods, cuisine, attractions, and city life.</p>
-                </article>
             </div>
         </section>
 
@@ -154,7 +106,7 @@
                 <p class="eyebrow">Limited offer</p>
                 <h3>Save 20% on selected summer escapes</h3>
             </div>
-            <a href="#bookings" class="button primary">Claim offer</a>
+            <a href="bookings.html" class="button primary">Claim offer</a>
         </section>
 
         <!-- Secondary booking call to action. -->
@@ -163,65 +115,7 @@
                 <p class="eyebrow">Ready to travel?</p>
                 <h3>Let us design your next unforgettable escape.</h3>
             </div>
-            <a href="#bookings" class="button primary">Start planning</a>
-        </section>
-
-        <!-- Booking form for collecting trip details. -->
-        <section id="bookings" class="booking-section">
-            <div class="section-heading">
-                <p class="eyebrow">Stress-free travel</p>
-                <h3>Easy bookings</h3>
-            </div>
-
-            <!-- Booking fields are validated in the browser and sent through email on a static site. -->
-            <form class="booking-form" id="booking-form" action="mailto:earlmarvin76@gmail.com" method="post" enctype="text/plain">
-                <!-- Destination selection. -->
-                <div class="form-field">
-                    <label for="destination">Destination</label>
-                    <select id="destination" name="destination" required>
-                        <option>Bali</option>
-                        <option>Paris</option>
-                        <option>Tokyo</option>
-                        <option>Dubai</option>
-                    </select>
-                </div>
-
-                <!-- Requested travel date. -->
-                <div class="form-field">
-                    <label for="travel-date">Travel date</label>
-                    <input type="date" id="travel-date" name="travel-date" required>
-                </div>
-
-                <!-- Number of travelers. -->
-                <div class="form-field">
-                    <label for="travelers">Travelers</label>
-                    <input type="number" id="travelers" name="travelers" min="1" max="12" value="2">
-                </div>
-
-                <!-- Visitor email used for booking communication. -->
-                <div class="form-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                </div>
-
-                <button type="submit" class="button primary submit-button">Book now</button>
-                <!-- Status text reports the result of the booking action to all users. -->
-                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-            </form>
-        </section>
-
-        <!-- Direct contact details for visitors who need assistance. -->
-        <section id="contact" class="contact-section">
-            <div class="section-heading">
-                <p class="eyebrow">Get in touch</p>
-                <h3>Contact our team</h3>
-            </div>
-            <!-- Updated agency contact details. -->
-            <div class="contact-details">
-                <p>Email: <a href="mailto:earlmarvin76@gmail.com">earlmarvin76@gmail.com</a></p>
-                <p>Phone: <a href="tel:+447741499404">+44 7741 499404</a></p>
-                <p>Location: Woburn Avenue, Hull, EastYorkshire</p>
-            </div>
+            <a href="bookings.html" class="button primary">Start planning</a>
         </section>
     </main>
     <!-- Footer with contact information, map, and a direct contact link. -->
@@ -231,14 +125,14 @@
                 <p>© 2026 Earl Marvin's Travel Agency. All rights reserved.</p>
                 <!-- Footer contact link uses the same current agency email address. -->
                 <div class="footer-links">
-                    <a href="mailto:earlmarvin76@gmail.com">Contact</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
             <!-- OpenStreetMap embed shows the agency's Hull location without an API key. -->
             <div class="footer-map">
                 <iframe
                     src="https://www.openstreetmap.org/export/embed.html?bbox=-0.363%2C53.738%2C-0.323%2C53.758&layer=mapnik&marker=53.748%2C-0.343"
-                    title="Map showing Woburn Avenue, Hull, East Yorkshire"
+                    title="Map showing Woburn Street, Hull, East Yorkshire"
                     loading="lazy"></iframe>
             </div>
         </div>

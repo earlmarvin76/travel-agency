@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     /* Fixed airplane image with a translucent color layer for readable content. */
     background-color: #dcecf5;
     background-image:
@@ -44,6 +45,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 header a {
     /* Remove default link decoration from the brand link. */
@@ -56,6 +58,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
+    margin: 0;
 }
 #menu {
     /* Base navigation list styling. */
@@ -159,7 +162,7 @@ main > section {
 
 .hero-content {
     /* Limit text width for comfortable reading over the hero image. */
-    max-width: 550px;
+    max-width: 700px;
 }
 
 .eyebrow {
@@ -549,6 +552,11 @@ footer {
 
     .hero h2 {
         font-size: clamp(2rem, 11vw, 3.2rem);
+        max-width: 100%;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero p {

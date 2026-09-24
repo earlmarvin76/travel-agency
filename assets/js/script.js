@@ -7,10 +7,13 @@ const formStatus = document.querySelector('#form-status');
 const menuLinks = navigationLinks;
 
 const updateActiveLink = () => {
-    const currentHash = window.location.hash || '#top';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
     navigationLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === currentHash);
+        const linkUrl = new URL(link.href, window.location.href);
+        const isCurrentPage = linkUrl.pathname.split('/').pop() === currentPage;
+        const isCurrentAnchor = isCurrentPage && linkUrl.hash && linkUrl.hash === window.location.hash;
+        link.classList.toggle('active', isCurrentPage && (!linkUrl.hash || isCurrentAnchor));
     });
 };
 
@@ -30,13 +33,6 @@ if (menuButton) {
         });
     });
 
-    const homeLink = document.querySelector('#site-menu a[href="#top"]');
-    homeLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.history.replaceState(null, '', '#top');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        updateActiveLink();
-    });
 }
 
 if (travelDate) {

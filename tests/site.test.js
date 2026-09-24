@@ -5,25 +5,40 @@ const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const destinationsHtml = fs.readFileSync(path.join(root, 'destinations.html'), 'utf8');
+const videosHtml = fs.readFileSync(path.join(root, 'videos.html'), 'utf8');
+const bookingsHtml = fs.readFileSync(path.join(root, 'bookings.html'), 'utf8');
+const contactHtml = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'assets/css/style.css'), 'utf8');
 const script = fs.readFileSync(path.join(root, 'assets/js/script.js'), 'utf8');
 
 const navigationLinks = [...html.matchAll(/<li><a href="([^"]+)">([^<]+)<\/a><\/li>/g)];
 
-test('navigation exposes four unique section links', () => {
+test('navigation exposes five separate pages', () => {
     assert.equal(navigationLinks.length, 5);
     assert.deepEqual(
         navigationLinks.map(([, href]) => href),
-        ['#top', '#destinations', '#videos', '#bookings', '#contact']
+        ['index.html', 'destinations.html', 'videos.html', 'bookings.html', 'contact.html']
     );
 });
 
-test('travel videos play inside the homepage', () => {
-    assert.match(html, /id="videos"/);
-    assert.match(html, /Travel &#45; Videos/);
-    assert.equal((html.match(/<iframe class="video-frame"/g) || []).length, 3);
-    assert.equal((html.match(/youtube\.com\/embed\/[A-Za-z0-9_-]{11}/g) || []).length, 3);
+test('travel videos have their own page', () => {
+    assert.match(videosHtml, /Travel &#45; Videos/);
+    assert.equal((videosHtml.match(/<iframe class="video-frame"/g) || []).length, 3);
+    assert.equal((videosHtml.match(/youtube\.com\/embed\/[A-Za-z0-9_-]{11}/g) || []).length, 3);
     assert.match(css, /\.video-frame/);
+});
+
+test('destinations have their own page', () => {
+    assert.match(destinationsHtml, /Top destinations/);
+    assert.equal((destinationsHtml.match(/class="destination-card"/g) || []).length, 3);
+});
+
+test('contact details have their own page', () => {
+    assert.match(contactHtml, /id="contact"/);
+    assert.match(contactHtml, /Contact our team/);
+    assert.match(contactHtml, /mailto:earlmarvin76@gmail\.com/);
+    assert.match(contactHtml, /tel:\+447741499404/);
 });
 
 test('mobile navigation uses an accessible button', () => {
@@ -36,22 +51,21 @@ test('mobile navigation uses an accessible button', () => {
 });
 
 test('Home link explicitly scrolls to the top', () => {
-    assert.match(html, /href="#top"/);
-    assert.match(script, /window\.scrollTo\(\{ top: 0, behavior: 'smooth' \}\)/);
-    assert.match(script, /event\.preventDefault\(\)/);
+    assert.match(html, /href="index\.html"/);
+    assert.match(script, /window\.location\.pathname\.split\('\/'\)/);
 });
 
 test('booking form requires valid booking details', () => {
-    assert.match(html, /id="booking-form"/);
-    assert.match(html, /id="destination"[^>]*required/);
-    assert.match(html, /id="travel-date"[^>]*required/);
-    assert.match(html, /id="email"[^>]*required/);
-    assert.match(html, /id="travelers"[^>]*min="1"[^>]*max="12"/);
+    assert.match(bookingsHtml, /id="booking-form"/);
+    assert.match(bookingsHtml, /id="destination"[^>]*required/);
+    assert.match(bookingsHtml, /id="travel-date"[^>]*required/);
+    assert.match(bookingsHtml, /id="email"[^>]*required/);
+    assert.match(bookingsHtml, /id="travelers"[^>]*min="1"[^>]*max="12"/);
     assert.match(script, /bookingForm\.checkValidity\(\)/);
 });
 
 test('booking form creates a prefilled email request', () => {
-    assert.match(html, /action="mailto:earlmarvin76@gmail\.com"/);
+    assert.match(bookingsHtml, /action="mailto:earlmarvin76@gmail\.com"/);
     assert.match(script, /Travel booking request/);
     assert.match(script, /window\.location\.href = `mailto:earlmarvin76@gmail\.com/);
 });
@@ -67,7 +81,7 @@ test('page includes keyboard focus and header-safe scrolling styles', () => {
 test('footer includes a responsive location map', () => {
     assert.match(html, /class="footer-map"/);
     assert.match(html, /openstreetmap\.org\/export\/embed\.html/);
-    assert.match(html, /title="Map showing Woburn Avenue, Hull, East Yorkshire"/);
+    assert.match(bookingsHtml, /title="Map showing Woburn Street, Hull, East Yorkshire"/);
     assert.match(css, /\.footer-map iframe/);
     assert.match(css, /@media screen and \(max-width: 767px\)/);
 });

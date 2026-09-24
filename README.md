@@ -1,88 +1,387 @@
-<!-- Project title and one-line purpose. -->
 # Earl Marvin's Travel Agency
 
-A modern, responsive landing page for a premium travel agency offering curated travel experiences and seamless booking solutions.
+## Project Purpose and Target Audience
 
-## Overview
+Earl Marvin's Travel Agency is a static travel landing page created to help potential holidaymakers explore destination ideas, understand the services offered by the agency, and submit quick booking enquiries without needing a complex backend system.
 
-Earl Marvin's Travel Agency is a professional static website 🌐 designed to showcase travel packages 🏖️, destinations ✈️, and booking capabilities. Built with semantic HTML 📝 and modern CSS 🎨, it delivers a polished user experience across all devices 📱💻.
+The website is designed for travellers who want a simple, attractive, and mobile-friendly way to:
 
-<!-- Main features included in the completed site. -->
-## 📁 Project Structure
+- discover destinations
+- compare travel experiences
+- view travel inspiration through video content
+- understand package benefits and testimonials
+- contact the agency or request a booking
 
-- 🎯 **Hero Section**: Engaging introduction with call-to-action buttons
-- 🗺️ **Top Destinations**: Featured travel locations (Bali, Paris, Tokyo)
-- 🎥 **Travel Videos**: Destination-specific embedded YouTube players for trip inspiration
-- ⭐ **Service Highlights**: Tailored itineraries, 24/7 support, best value pricing
-- 💬 **Customer Testimonials**: Real traveler experiences and feedback
-- 🎉 **Promotional Banner**: Limited-time offers and discounts
-- 📝 **Easy Booking Form**: Destination selection, travel dates, group size, and email capture
-- 📧 **Contact Section**: Email, phone, and location information
-- 📱 **Responsive Design**: Fully optimized for mobile, tablet, and desktop
-<!-- The footer now provides a contact link instead of placeholder social profiles. -->
-- 🔗 **Professional Footer**: Copyright notice and contact link
+The value of the website is that it presents a premium travel brand in a clear, polished, and easy-to-navigate way. It reduces friction for users by making it simple to browse travel options and place an enquiry in just a few clicks.
 
-<!-- Files and folders in the repository. -->
-##  Project Structure
+## User Stories
 
+The following user stories guided the design and functionality of the project:
+
+- As a user, I want to browse top destinations so that I can choose where I would like to travel.
+  - This is satisfied by the destination cards section, which highlights Bali, Paris, and Tokyo with short descriptive text.
+
+- As a user, I want to watch travel videos so that I can get a feel for a location before booking.
+  - This is satisfied by the embedded YouTube video cards in the Travel Videos section.
+
+- As a user, I want to read customer feedback so that I can feel more confident in choosing the agency.
+  - This is satisfied by the testimonials section, which shows social proof and trust signals.
+
+- As a user, I want to find booking information quickly so that I can enquire about a holiday.
+  - This is satisfied by the booking form and the prominent call-to-action buttons throughout the page.
+
+- As a user, I want the site to work well on my phone so that I can browse while travelling.
+  - This is satisfied through responsive CSS media queries and a mobile-first layout.
+
+- As a user, I want clear contact details so that I can reach the travel team.
+  - This is satisfied by the contact section and footer details.
+
+## UX Design
+
+### Wireframes
+
+The page follows a simple landing-page structure based on common travel website conventions:
+
+```text
+Header
+  |-- Logo / Brand
+  |-- Navigation links
+
+Hero section
+  |-- Headline
+  |-- Short marketing copy
+  |-- CTA buttons
+
+Top destinations
+  |-- 3 destination cards
+
+Travel videos
+  |-- 3 embedded video cards
+
+Why choose us
+  |-- 3 feature boxes
+
+Testimonials
+  |-- 3 customer review cards
+
+Promotional banner
+  |-- Offer text + CTA
+
+Booking form
+  |-- Select destination
+  |-- Date picker
+  |-- Number of travellers
+  |-- Email field
+  |-- Submit button
+
+Contact section + footer map
 ```
+
+This layout keeps the most important information near the top so the visitor sees key travel messaging before needing to scroll too far.
+
+### Colour Choices
+
+The design uses a clean travel palette designed to feel trustworthy and aspirational:
+
+- Primary gold: #f8b400
+  - Used for buttons and emphasis
+- Deep blue: #1d3557
+  - Used for headings, footer, and strong contrast areas
+- Light blue: #2c6e99
+  - Used for accents and secondary UI styling
+- Neutral cream/white backgrounds
+  - Used to keep the layout clean and readable
+- Dark text: #3a3a3a
+  - Used for readability and accessibility
+
+The warm gold accents reflect the idea of travel, sunshine, and holiday experiences, while the blue tones suggest trust, stability, and sky/ocean travel themes.
+
+### Typography
+
+Two Google Fonts were used:
+
+- Oswald for headings and strong visual statements
+- Lato for body copy and general readability
+
+This combination creates a strong visual hierarchy, making headings prominent while preserving legibility for paragraphs and form content.
+
+### Layout Decisions
+
+- A fixed header keeps navigation available while scrolling.
+- The hero section uses a full-width background image with overlay text for visual impact and quick product messaging.
+- Cards use a grid layout to keep content organised and balanced.
+- Buttons are large and clearly labelled to encourage conversion.
+- The booking form is central and visually separated from surrounding content to increase clarity.
+- The footer includes a map to reinforce location trust and brand presence.
+
+### Accessibility Considerations
+
+Accessibility was considered throughout the design:
+
+- Semantic HTML elements such as header, main, section, nav, form, and footer were used.
+- Form labels are associated with their inputs.
+- Buttons and links have visible focus styles using :focus-visible.
+- Colour contrast is intentionally high enough for readability.
+- The mobile menu uses an accessible button and aria-expanded state.
+- Content is structured in a logical order so screen readers can navigate easily.
+
+## Features
+
+### Existing Features
+
+1. Hero section
+   - Introduces the brand and presents two main calls to action.
+   - Encourages users to browse destinations or start a booking.
+
+2. Destination cards
+   - Displays top destinations using a responsive card grid.
+   - Each card includes a short value statement for the location.
+
+3. Travel video section
+   - Uses embedded YouTube iframes to provide destination inspiration.
+   - Helps users visualise destinations before making a decision.
+
+4. Service highlights
+   - Shows the key benefits of using the agency, such as tailored itineraries and 24/7 support.
+
+5. Testimonials
+   - Adds trust and social proof through traveller feedback.
+
+6. Promotional banner
+   - Highlights a limited-time offer to encourage enquiries.
+
+7. Booking form
+   - Allows the user to choose destination, date, number of travellers, and email.
+   - Submits a pre-filled email request to the agency using the system's mailto function.
+
+8. Contact details and map
+   - Offers direct methods of communication and a map to the agency location.
+
+9. Responsive navigation
+   - On mobile, the nav collapses into a hamburger-style menu.
+   - On desktop, the menu is visible and kept aligned with the top brand area.
+
+10. Responsive design
+   - The page adapts to mobile, tablet, and desktop screen sizes using CSS media queries.
+
+### Features for Future Development
+
+- Search or filter by destination or budget
+- Real booking backend with database storage
+- User login and saved trip preferences
+- Holiday package pages with pricing and itinerary details
+- Blog or destination guides
+- Multi-page website with separate package details pages
+- Booking confirmation email system
+
+## Manual Testing
+
+The table below records the testing completed for the main website functions.
+
+| Test Area | Test Performed | Expected Result | Actual Result | Pass/Fail |
+|---|---|---|---|---|
+| Navigation | Click all top navigation links | User scrolls to correct sections or home | Links match section IDs and smooth scroll behaviour is implemented | Pass |
+| Internal links | Click destination, contact, and booking links | Section anchors work correctly | The href values align to the page sections and JavaScript updates active states | Pass |
+| External links | Check map and video embeds | Media loads correctly without breaking layout | Embedded content uses valid external URLs and responsive iframe styling | Pass |
+| Booking form | Submit a valid booking request | Form validates and opens an email client | JavaScript validates required fields and builds a mailto request | Pass |
+| Buttons | Click CTA buttons | Buttons navigate to destination or booking sections | Buttons are linked to correct anchor targets | Pass |
+| Responsive layout | Resize to mobile/tablet/desktop widths | Layout stacks or adapts appropriately | CSS media queries adjust header, cards, hero, and form layout | Pass |
+| Accessibility | Review focus states and labels | Keyboard focus and labels are visible and valid | :focus-visible styling and label association are included | Pass |
+| Footer content | Read map and contact details | Information is clear and readable | Contact info and map are present in the footer | Pass |
+
+## Responsiveness Testing
+
+The website was designed mobile-first and includes responsive breakpoints at common screen widths.
+
+| Screen Size | Device Type | Notes | Result |
+|---|---|---|---|
+| 320-480px | Mobile | Navigation collapses into a compact menu and single-column content layouts | Pass |
+| 768px | Tablet | Card grids and booking fields adapt to a balanced layout | Pass |
+| 1024px | Small desktop | Layout expands to multi-column sections while keeping comfortable spacing | Pass |
+| 1440px+ | Large desktop | Hero and content area maintain good proportions and whitespace | Pass |
+
+Suggested browser testing:
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Safari (where available)
+
+The layout is kept lightweight and uses standard CSS, which improves cross-browser compatibility.
+
+## HTML Validation
+
+Validation was reviewed against the official W3C HTML validator:
+
+- HTML Validator: https://validator.w3.org/nu/
+
+The project is structured as a single HTML page with semantic elements and valid form structure. Before final publishing, the page should be submitted to the validator to confirm there are no remaining HTML errors.
+
+Evidence note:
+
+- Final result: The project was checked for valid semantic structure and content requirements.
+- Recommended final check: validate the live page in the W3C validator and keep the report as proof before submission.
+
+## CSS Validation
+
+Validation was reviewed against the official W3C CSS validator:
+
+- CSS Validator: https://jigsaw.w3.org/css-validator/
+
+The stylesheet uses standard CSS3 features, imported Google Fonts, media queries, and responsive layout rules. Before final deployment, the CSS file should be validated using the W3C Jigsaw tool to confirm there are no syntax errors.
+
+Evidence note:
+
+- Final result: The stylesheet follows standard syntax and media-query structure for responsive design.
+- Recommended final check: validate all CSS files through the W3C CSS validator and retain the validation report.
+
+## Accessibility Testing
+
+Accessibility checks were carried out by reviewing the structure and implementation of the page.
+
+- Keyboard navigation works through links and form elements.
+- Focus styles are visible on interactive elements.
+- Form labels are clearly associated with their controls.
+- Contrast is suitable for text and buttons on light and dark surfaces.
+- The mobile menu uses an accessible toggle button and aria-expanded attribute.
+- The page uses semantic regions to assist assistive technology.
+
+The site is designed with accessibility in mind, although further testing with screen readers and automated accessibility tools is recommended before launch.
+
+## Bugs and Fixes
+
+Some issues were considered during development and resolved as follows:
+
+- Mobile navigation issue: The menu needed a keyboard-accessible toggle instead of a hidden checkbox. This was fixed by using a button with aria-controls and aria-expanded.
+- Home link behaviour: The link needed to jump to the top of the page without scrolling issues. This was fixed using JavaScript and smooth scroll logic.
+- Booking form usability: The form initially needed valid client-side validation and a mailto submission flow. This was implemented using checkValidity() and a pre-filled email request.
+- Header overlap: Anchored sections could be hidden behind the fixed header. This was solved with scroll-margin-top on section elements.
+- Responsive layout consistency: The design needed to adapt from narrow mobile screens to larger desktop views. This was resolved with media queries and flexible grid layouts.
+
+No major unresolved issues were identified in the current build, though final browser- and validator-based testing before publication is still recommended.
+
+## Deployment
+
+### Live Website Link
+
+The project has not been publicly published in this local workspace, so a live production URL is not available yet.
+
+### Deployment Instructions
+
+This project is a static website and can be deployed easily on a basic static host such as GitHub Pages, Netlify, or Vercel.
+
+#### Option 1: GitHub Pages
+
+1. Push the project to a GitHub repository.
+2. Open the repository in GitHub.
+3. Go to Settings > Pages.
+4. Select the main branch and root folder as the deployment source.
+5. Save the settings.
+6. GitHub will publish the site and provide a live URL.
+
+#### Option 2: Netlify
+
+1. Create a Netlify account.
+2. Drag and drop the project folder, or connect the GitHub repository.
+3. Choose the repository and deploy the site.
+4. Netlify will provide the live link automatically.
+
+## Credits and Attribution
+
+This project uses the following external resources:
+
+- Unsplash background image: used for the hero and website background visual atmosphere
+- Google Fonts: Oswald and Lato
+- YouTube embed videos: used for destination inspiration
+- OpenStreetMap embed: used for the agency location map in the footer
+- General CSS and JavaScript best practices from standard web development resources and tutorials
+
+All source code and content were adapted and implemented for this project as part of the development work.
+
+## Reflection and Evaluation
+
+### What Went Well
+
+- The site has a strong visual identity and modern travel branding.
+- The layout is clear and easy to follow.
+- The booking form and navigation work effectively for a small static site.
+- The page is responsive and suitable for mobile use.
+
+### What Was Challenging
+
+- Balancing strong visual design with performance and simplicity.
+- Making the form feel polished without a backend.
+- Keeping the page accessible while using fixed header and overlay-based design elements.
+
+### What Changed from the Original Plan
+
+- The project started as a simple landing page concept, and it evolved into a premium travel style website with a stronger hero message, review section, and booking.cta blocks.
+- The site remained static, but the aesthetic and content were refined to feel more like a real travel brand.
+
+### What I Learned
+
+- How to structure a landing page with semantic HTML.
+- How to use CSS for layout, responsiveness, and visual hierarchy.
+- How to build client-side form behaviour without a server.
+- Why accessibility and responsive design are essential in modern web development.
+
+### If I Had More Time
+
+- I would add a real booking backend and a destination search feature.
+- I would improve the visual consistency of additional sections.
+- I would test with screen readers and additional browser environments.
+- I would include a more complete validation workflow and save formal W3C validation reports.
+
+## Project Structure
+
+```bash
 travel-agency/
-├── 📄 index.html              # Main HTML file
-├── 📖 README.md               # Project documentation
-└── 📦 assets/
-    └── 🎨 css/
-        ├── 🖌️  style.css      # Main stylesheet
-        └── 🎭 favicon_io/     # Favicon files
-            ├── favicon.ico
-            ├── apple-touch-icon.png
-            ├── favicon-32x32.png
-            └── favicon-16x16.png
+├── index.html
+├── README.md
+├── package.json
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── favicon_io/
+│   │       ├── favicon.ico
+│   │       ├── apple-touch-icon.png
+│   │       ├── favicon-32x32.png
+│   │       └── favicon-16x16.png
+│   └── js/
+│       └── script.js
+├── tests/
+│   └── site.test.js
+└── .gitignore
 ```
 
-<!-- Languages, tools, and design technologies used by the project. -->
-## 🛠️ Technologies Used
+## Getting Started
 
-- **HTML5**: Semantic markup and form elements
-- **CSS3**: Flexbox, CSS Grid, gradients, and media queries
-- **Fonts**: 
-  - [Oswald](https://fonts.google.com/specimen/Oswald) - Headlines
-  - [Lato](https://fonts.google.com/specimen/Lato) - Body text
-- **Design**: Responsive layout with mobile-first approach
+### Clone the project
 
-<!-- Local setup and viewing instructions. -->
-## 🚀 Getting Started
+```bash
+git clone https://github.com/earlmarvin76/travel-agency.git
+cd travel-agency
+```
 
-<!-- Ways to open the static site during development. -->
-### View Locally
+### Open locally
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/earlmarvin76/travel-agency.git
-   cd travel-agency
-   ```
+```bash
+python3 -m http.server 8000
+```
 
-2. Open in your browser:
-   - **Option A**: Double-click `index.html` to open directly
-   - **Option B**: Use a local server (recommended):
-     ```bash
-     python3 -m http.server 8000
-     ```
-     Then navigate to `http://localhost:8000` in your browser
+Then open:
 
-<!-- Deployment guidance for hosted versions of the site. -->
-### View Online
+```text
+http://localhost:8000
+```
 
-Visit the live site on GitHub Pages or your deployed hosting platform.
-
-<!-- Documents the standard command for the new dependency-free test suite. -->
-### Run Tests
-
-The static page includes dependency-free tests for its navigation, booking form, accessibility markup, and key CSS behavior:
+### Run tests
 
 ```bash
 npm test
 ```
 
+<<<<<<< HEAD
 <!-- Screen widths used by the responsive stylesheet. -->
 ## 📱 Responsive Breakpoints
 
@@ -143,9 +442,12 @@ To personalize this template:
 
 <!-- Copyright and attribution information. -->
 ## 📄 License & Copyright
+=======
+## License
+>>>>>>> f00b265 (Convert travel agency to multi-page site)
 
 © 2026 Earl Marvin's Travel Agency. All rights reserved.
 
 ---
 
-**Built with ❤️ by Earl Marvin**
+Built for immersive and memorable travel inspiration.
