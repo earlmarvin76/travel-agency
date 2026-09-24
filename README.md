@@ -19,28 +19,28 @@ The value of the website is that it presents a premium travel brand in a clear, 
 The following user stories guided the design and functionality of the project:
 
 - As a user, I want to browse top destinations so that I can choose where I would like to travel.
-  - This is satisfied by the destination cards section, which highlights Bali, Paris, and Tokyo with short descriptive text.
+  - This is satisfied by the dedicated `destinations.html` page, which highlights Bali, Paris, and Tokyo with short descriptive text.
 
 - As a user, I want to watch travel videos so that I can get a feel for a location before booking.
-  - This is satisfied by the embedded YouTube video cards in the Travel Videos section.
+  - This is satisfied by the dedicated `videos.html` page and its embedded YouTube video cards.
 
 - As a user, I want to read customer feedback so that I can feel more confident in choosing the agency.
   - This is satisfied by the testimonials section, which shows social proof and trust signals.
 
 - As a user, I want to find booking information quickly so that I can enquire about a holiday.
-  - This is satisfied by the booking form and the prominent call-to-action buttons throughout the page.
+  - This is satisfied by the dedicated `bookings.html` page and the prominent call-to-action buttons throughout the site.
 
 - As a user, I want the site to work well on my phone so that I can browse while travelling.
   - This is satisfied through responsive CSS media queries and a mobile-first layout.
 
 - As a user, I want clear contact details so that I can reach the travel team.
-  - This is satisfied by the contact section and footer details.
+  - This is satisfied by the dedicated `contact.html` page, which includes email, telephone, and location details.
 
 ## UX Design
 
 ### Wireframes
 
-The page follows a simple landing-page structure based on common travel website conventions:
+The site follows a simple multi-page structure based on common travel website conventions:
 
 ```text
 Header
@@ -52,29 +52,28 @@ Hero section
   |-- Short marketing copy
   |-- CTA buttons
 
-Top destinations
+Home page
+  |-- Hero introduction
+  |-- Service benefits
+  |-- Testimonials
+  |-- Promotional calls to action
+
+Destinations page
   |-- 3 destination cards
 
-Travel videos
+Travel videos page
   |-- 3 embedded video cards
 
-Why choose us
-  |-- 3 feature boxes
-
-Testimonials
-  |-- 3 customer review cards
-
-Promotional banner
-  |-- Offer text + CTA
-
-Booking form
-  |-- Select destination
-  |-- Date picker
+Bookings page
+  |-- Destination selection
+  |-- Travel date
   |-- Number of travellers
   |-- Email field
   |-- Submit button
 
-Contact section + footer map
+Contact page
+  |-- Email, telephone, and location details
+  |-- Footer map
 ```
 
 This layout keeps the most important information near the top so the visitor sees key travel messaging before needing to scroll too far.
@@ -171,7 +170,7 @@ Accessibility was considered throughout the design:
 - User login and saved trip preferences
 - Holiday package pages with pricing and itinerary details
 - Blog or destination guides
-- Multi-page website with separate package details pages
+- Package detail pages with pricing and itinerary information
 - Booking confirmation email system
 
 ## Manual Testing
@@ -180,11 +179,11 @@ The table below records the testing completed for the main website functions.
 
 | Test Area | Test Performed | Expected Result | Actual Result | Pass/Fail |
 |---|---|---|---|---|
-| Navigation | Click all top navigation links | User scrolls to correct sections or home | Links match section IDs and smooth scroll behaviour is implemented | Pass |
-| Internal links | Click destination, contact, and booking links | Section anchors work correctly | The href values align to the page sections and JavaScript updates active states | Pass |
+| Navigation | Click all top navigation links | The correct page opens and the current link is highlighted | Navigation routes between the five HTML pages and JavaScript updates active states | Pass |
+| Internal links | Click destination, contact, and booking links | The correct destination page opens | CTA and footer links point to `destinations.html`, `contact.html`, or `bookings.html` | Pass |
 | External links | Check map and video embeds | Media loads correctly without breaking layout | Embedded content uses valid external URLs and responsive iframe styling | Pass |
 | Booking form | Submit a valid booking request | Form validates and opens an email client | JavaScript validates required fields and builds a mailto request | Pass |
-| Buttons | Click CTA buttons | Buttons navigate to destination or booking sections | Buttons are linked to correct anchor targets | Pass |
+| Buttons | Click CTA buttons | Buttons navigate to destination or booking pages | Buttons open the correct page targets | Pass |
 | Responsive layout | Resize to mobile/tablet/desktop widths | Layout stacks or adapts appropriately | CSS media queries adjust header, cards, hero, and form layout | Pass |
 | Accessibility | Review focus states and labels | Keyboard focus and labels are visible and valid | :focus-visible styling and label association are included | Pass |
 | Footer content | Read map and contact details | Information is clear and readable | Contact info and map are present in the footer | Pass |
@@ -209,13 +208,29 @@ Suggested browser testing:
 
 The layout is kept lightweight and uses standard CSS, which improves cross-browser compatibility.
 
+## Screenshots
+
+The following screenshots document the finished responsive interface:
+
+### Home page on desktop
+
+![Travel agency home page on desktop](docs/screenshots/home-desktop.png)
+
+### Bookings page on mobile
+
+![Travel agency bookings page on mobile](docs/screenshots/bookings-mobile.png)
+
+### Contact page on desktop
+
+![Travel agency contact page on desktop](docs/screenshots/contact-desktop.png)
+
 ## HTML Validation
 
 Validation was reviewed against the official W3C HTML validator:
 
 - HTML Validator: https://validator.w3.org/nu/
 
-The project is structured as a single HTML page with semantic elements and valid form structure. Before final publishing, the page should be submitted to the validator to confirm there are no remaining HTML errors.
+The project uses five semantic HTML pages with shared navigation, footer, and form structure. Each page should be submitted to the validator before final publishing to confirm there are no remaining HTML errors.
 
 Evidence note:
 
@@ -253,7 +268,8 @@ The site is designed with accessibility in mind, although further testing with s
 Some issues were considered during development and resolved as follows:
 
 - Mobile navigation issue: The menu needed a keyboard-accessible toggle instead of a hidden checkbox. This was fixed by using a button with aria-controls and aria-expanded.
-- Home link behaviour: The link needed to jump to the top of the page without scrolling issues. This was fixed using JavaScript and smooth scroll logic.
+- Multi-page navigation: The original one-page anchor navigation needed to work across separate documents. This was fixed by using page URLs and pathname-aware active-link logic.
+- Contact organisation: Contact information was previously grouped with bookings. This was fixed by moving it to the dedicated `contact.html` page.
 - Booking form usability: The form initially needed valid client-side validation and a mailto submission flow. This was implemented using checkValidity() and a pre-filled email request.
 - Header overlap: Anchored sections could be hidden behind the fixed header. This was solved with scroll-margin-top on section elements.
 - Responsive layout consistency: The design needed to adapt from narrow mobile screens to larger desktop views. This was resolved with media queries and flexible grid layouts.
@@ -381,7 +397,6 @@ http://localhost:8000
 npm test
 ```
 
-<<<<<<< HEAD
 <!-- Screen widths used by the responsive stylesheet. -->
 ## 📱 Responsive Breakpoints
 
@@ -410,9 +425,9 @@ npm test
 <!-- Short reference for the page sections and their responsibilities. -->
 ## 📝 Sections Overview
 
-<!-- Header navigation and anchor destinations. -->
+<!-- Header navigation and page destinations. -->
 ### Navigation
-- Home, Destinations, Travel Videos, Bookings, and Contact links with smooth anchor navigation
+- Home, Destinations, Travel Videos, Bookings, and Contact links across the five HTML pages
 
 ### Travel Videos
 - Embedded YouTube travel guides for Bali, Paris, and Tokyo
@@ -431,20 +446,16 @@ npm test
 - Features: attention to detail, responsive support, discovery
 
 <!-- Common places to edit the site's content and appearance. -->
-##  Customization
+## Customization
 
 To personalize this template:
 
-1. **Edit Content**: Modify text, images, and links in `index.html`
-2. **Adjust Colors**: Update CSS variables in `style.css`
-3. **Add Destinations**: Extend the destination cards section
-4. **Update Contact Info**: Replace email, phone, and address
+1. **Edit Content**: Modify text, images, and links in the relevant HTML page
+2. **Adjust Colors**: Update the color declarations in `style.css`
+3. **Add Destinations**: Extend the destination cards in `destinations.html`
+4. **Update Contact Info**: Replace email, phone, and address in `contact.html`
 
-<!-- Copyright and attribution information. -->
-## 📄 License & Copyright
-=======
 ## License
->>>>>>> f00b265 (Convert travel agency to multi-page site)
 
 © 2026 Earl Marvin's Travel Agency. All rights reserved.
 
