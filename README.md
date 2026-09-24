@@ -309,7 +309,7 @@ This project uses the following external resources:
 - Unsplash background image: used for the hero and website background visual atmosphere
 - Google Fonts: Oswald and Lato
 - YouTube embed videos: used for destination inspiration
-- OpenStreetMap static map: used for the agency location map in the footer, with a link to the interactive map
+- OpenStreetMap map tile: used for the agency location map in the footer, with a link to the interactive map
 - General CSS and JavaScript best practices from standard web development resources and tutorials
 
 All source code and content were adapted and implemented for this project as part of the development work.

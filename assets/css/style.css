@@ -472,9 +472,10 @@ footer {
 .footer-map img {
     display: block;
     width: 100%;
-    min-height: 13rem;
+    height: 13rem;
     border: 0;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .footer-map span {
@@ -482,6 +483,56 @@ footer {
     padding-top: 0.35rem;
     font-size: 0.85rem;
     text-align: center;
+}
+
+.footer-map .map-visual {
+    position: relative;
+    display: block;
+    height: 13rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+.footer-map .map-tiles {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.footer-map .map-tiles img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.footer-map .map-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.footer-map .map-visual b {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background: #e63946;
+    color: #ffffff;
+    place-items: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* Tablet and desktop layout changes at 768px and above. */
@@ -618,8 +669,8 @@ footer {
         text-align: center;
     }
 
-    .footer-map img {
-        min-height: 11rem;
+    .footer-map .map-visual {
+        height: 11rem;
     }
 }
 
