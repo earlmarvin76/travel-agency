@@ -290,6 +290,16 @@ main > section {
     flex: 1;
 }
 
+.video-source {
+    color: #1d3557;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.video-source:hover {
+    text-decoration: underline;
+}
+
 .video-frame {
     /* Keep embedded videos responsive across mobile and desktop screens. */
     width: 100%;

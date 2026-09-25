@@ -26,6 +26,10 @@ test('travel videos have their own page', () => {
     assert.match(videosHtml, /Travel &#45; Videos/);
     assert.equal((videosHtml.match(/<iframe class="video-frame"/g) || []).length, 3);
     assert.equal((videosHtml.match(/youtube\.com\/embed\/[A-Za-z0-9_-]{11}/g) || []).length, 3);
+    assert.equal((videosHtml.match(/youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}/g) || []).length, 3);
+    assert.equal((videosHtml.match(/referrerpolicy="strict-origin-when-cross-origin"/g) || []).length, 3);
+    assert.match(videosHtml, /<meta name="referrer" content="strict-origin-when-cross-origin">/);
+    assert.match(videosHtml, /src="https:\/\/www\.youtube\.com\/embed\/_gIljISgm_k" title="Paris travel video"/);
     assert.match(css, /\.video-frame/);
 });
 
